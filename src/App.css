@@ -1,0 +1,286 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+
+.abouttitle {
+  color: white;
+}
+
+html {
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  font-family: "Raleway", sans-serif;
+  background-color: #fcf8f3;
+}
+
+body {
+  background: url("https://t1.daumcdn.net/cfile/tistory/2269703D55ADE90707")
+    center center/cover;
+  border-radius: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+#root {
+  height: 100%;
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  padding: 30px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  transition: 500ms;
+}
+
+.apploading {
+  background-color: #a8a4ce;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.navigation {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+.nav-box {
+  width: 250px;
+  height: 50px;
+  background-color: rgba(77, 74, 74, 0.5);
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: white;
+  z-index: 1;
+  margin: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.nav-item:hover {
+  color: plum;
+}
+
+.hometitle {
+  white-space: pre-wrap;
+  text-align: center;
+  font-weight: 1000;
+  /* font-size: 12em; */
+  font-size: 10rem;
+  color: whitesmoke;
+  line-height: 8rem;
+  text-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.homesubtitle {
+  font-size: 15px;
+  text-align: center;
+  color: whitesmoke;
+  text-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
+    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
+}
+
+.nav-item:after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px white;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+.nav-item:hover:after {
+  transform: scaleX(1);
+}
+.nav-item.fromRight:after {
+  transform-origin: 100% 50%;
+}
+.nav-item.fromLeft:after {
+  transform-origin: 0% 50%;
+}
+
+@media screen and (max-width: 768px) {
+  .hometitle {
+    font-size: 10rem;
+
+    transition: 500ms;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hometitle {
+    font-size: 8rem;
+    transition: 500ms;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .hometitle {
+    font-size: 4rem;
+    line-height: 4rem;
+
+    transition: 500ms;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .hometitle {
+    font-size: 2rem;
+    line-height: 2rem;
+    transition: 500ms;
+  }
+  #root {
+    padding: 10px;
+  }
+}
+
+@media screen and (max-height: 600px) {
+  .hometitle {
+    font-size: 3rem;
+    line-height: 4rem;
+    transition: 500ms;
+  }
+}
+
+@media screen and (max-height: 300px) {
+  .hometitle {
+    font-size: 1rem;
+    line-height: 0.8rem;
+    transition: 500ms;
+    margin-bottom: 5px;
+  }
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
+
+.body {
+  background-color: #fcc5c0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  background-color: #fff000;
+  border-radius: 12px;
+  color: #000;
+  cursor: pointer;
+  font-weight: bold;
+  /* padding: 5px 5px; */
+  text-align: center;
+  transition: 200ms;
+  width: 50px;
+  height: 50px;
+  box-sizing: border-box;
+  border: 0;
+  font-size: 16px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn:not(:disabled):hover,
+.btn:not(:disabled):focus {
+  outline: 0;
+  background: #f4e603;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
+}
+
+.btn:disabled {
+  filter: saturate(0.2) opacity(0.5);
+  -webkit-filter: saturate(0.2) opacity(0.5);
+  cursor: not-allowed;
+}
+
+.main {
+  background-color: #e8a0bf;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
+}
+.title {
+  color: rgb(4, 75, 84);
+}
+
+.text {
+  text-shadow: rgba(255, 255, 255, 0.3) 0px 5px 38px,
+    rgba(0, 0, 0, 0.22) 0px 5px 12px;
+}
+
+.loading {
+  height: 470px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 450px;
+}
+
+.weather-btn {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.weather-btn > button {
+  margin: 5px;
+  padding: 7px 12px;
+  text-align: center;
+  text-transform: uppercase;
+  transition: 0.5s;
+  background-size: 200% auto;
+  color: white;
+  border-radius: 10px;
+  display: block;
+  border: 0px;
+  font-weight: 500;
+  box-shadow: 0px 0px 14px -7px #170e02;
+  background-color: #454545;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.weather-btn > button:hover {
+  background-position: right center;
+  transform: scale(1.1);
+  color: #fff;
+  text-decoration: none;
+}
+
+.weather-btn > button:active {
+  transform: scale(0.8);
+}
