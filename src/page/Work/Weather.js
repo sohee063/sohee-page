@@ -3,51 +3,20 @@ import Container from "react-bootstrap/Container";
 import WeatherBox from "../../component/WeatherBox";
 import WeatherButton from "../../component/WeatherButton";
 import DotLoader from "react-spinners/DotLoader";
-
-const API_KEY = process.env.REACT_APP_API_KEY;
+import { useDispatch, useSelector } from "react-redux";
+import { weatherAction } from "../../redux/actions/weatherAction";
 
 const Weather = () => {
-  const [weather, setWeather] = useState(null);
-  const [currentCity, setCurrentCity] = useState("");
   const [loading, setLoading] = useState(false);
   const [city, setCity] = useState("");
   const [background, setBackgroud] = useState();
   const cities = ["New York", "Tokyo", "Rome", "Paris"];
 
-  const getCurrentLocation = () => {
-    navigator.geolocation.getCurrentPosition((position) => {
-      let lat = position.coords.latitude;
-      let lon = position.coords.longitude;
-      getWeatherByCurrentLocation(lat, lon);
-    });
-  };
-
-  const getWeatherByCurrentLocation = async (lat, lon) => {
-    let url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`;
-    let response = await fetch(url);
-    let data = await response.json();
-    setWeather(data);
-    setCurrentCity(data.name);
-    setLoading(false);
-  };
-
-  const getWeatherByCity = async () => {
-    setLoading(true);
-    let url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`;
-    let response = await fetch(url);
-    let data = await response.json();
-    setWeather(data);
-    setLoading(false);
-  };
-
-  useEffect(() => {
-    setLoading(true);
-    if (!city) {
-      getCurrentLocation();
-    } else {
-      getWeatherByCity();
-    }
-  }, [city]);
+  const dispatch = useDispatch();
+  const currentWeatherData = useSelector(
+    (state) => state.weather.currentWeather
+  );
+  console.log("나다", currentWeatherData.name);
 
   return (
     <Container>
@@ -61,7 +30,7 @@ const Weather = () => {
             <WeatherButton
               cities={cities}
               setCity={setCity}
-              currentCity={currentCity}
+              currentCity={currentWeatherData.name}
             />
           </div>
         ) : (
@@ -73,14 +42,14 @@ const Weather = () => {
           >
             <h4 className="title">Today's weather 🌎</h4>
             <WeatherBox
-              weather={weather}
+              weather={currentWeatherData}
               setBackgroud={setBackgroud}
-              background={background}
+              city={city}
             />
             <WeatherButton
               cities={cities}
               setCity={setCity}
-              currentCity={currentCity}
+              currentCity={currentWeatherData?.name}
             />
           </div>
         )}
