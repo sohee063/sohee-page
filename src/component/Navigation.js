@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { StyledComponent } from "styled-components";
 
 const Navigation = () => {
   return (

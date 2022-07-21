@@ -2,6 +2,8 @@ let initialState = {
   currentWeather: {},
   selectedCityWeather: {},
   loading: true,
+  currentOrSelect: true,
+  setRenderCity: {},
 };
 
 function weatherReducer(state = initialState, action) {
@@ -10,25 +12,23 @@ function weatherReducer(state = initialState, action) {
     case "GET_SELECTED_CITY":
       return {
         ...state,
-        currentWeather: payload.selectedCity,
+        selectedCityWeather: payload.selectedCity,
         loading: false,
+        currentOrSelect: false,
+        setRenderCity: payload.selectedCity,
       };
     case "GET_CURRENT_CITY":
       return {
         ...state,
         currentWeather: payload.currentCity,
         loading: false,
+        currentOrSelect: false,
+        setRenderCity: payload.currentCity,
       };
     case "GET_WEATHER_REQUEST":
-      return {
-        ...state,
-        loading: true,
-      };
+      return { ...state, loading: true };
     case "GET_WEATHER_FAIL":
-      return {
-        ...state,
-        loading: true,
-      };
+      return { ...state, loading: false };
     default:
       return { ...state };
   }

@@ -1,14 +1,9 @@
-import React, { useEffect } from "react";
-import { weatherAction } from "../redux/actions/weatherAction";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import React from "react";
 
-const WeatherBox = ({ setBackgroud, city }) => {
-  const dispatch = useDispatch();
-  const { currentWeather } = useSelector((state) => state.weather);
+const WeatherBox = ({ setBackgroud, renderWeather }) => {
   if (
-    currentWeather.weather &&
-    currentWeather.weather[0].description.includes("cloud")
+    renderWeather.weather &&
+    renderWeather.weather[0].description.includes("cloud")
   ) {
     setBackgroud(
       "url(" +
@@ -16,8 +11,8 @@ const WeatherBox = ({ setBackgroud, city }) => {
         ")"
     );
   } else if (
-    currentWeather.weather &&
-    currentWeather.weather[0].description.includes("sun")
+    renderWeather.weather &&
+    renderWeather.weather[0].description.includes("sun")
   ) {
     setBackgroud(
       "url(" +
@@ -25,8 +20,8 @@ const WeatherBox = ({ setBackgroud, city }) => {
         ")"
     );
   } else if (
-    currentWeather.weather &&
-    currentWeather.weather[0].description.includes("rain")
+    renderWeather.weather &&
+    renderWeather.weather[0].description.includes("rain")
   ) {
     setBackgroud(
       "url(" +
@@ -40,25 +35,13 @@ const WeatherBox = ({ setBackgroud, city }) => {
         ")"
     );
   }
-  useEffect(() => {
-    if (!city) {
-      navigator.geolocation.getCurrentPosition((position) => {
-        let lat = position.coords.latitude;
-        let lon = position.coords.longitude;
-        dispatch(weatherAction.getCurrentCityWeather(lat, lon));
-      });
-    } else {
-      dispatch(weatherAction.getSelectedCityWeather(city));
-    }
-  }, [city]);
 
   return (
     <div className="weather-box">
-      <div>ddd</div>
-      <h1 className="text">{currentWeather?.name}</h1>
-      <h1 className="text">{currentWeather.main?.temp.toFixed(1)} ℃</h1>
+      <h1 className="text">{renderWeather?.name}</h1>
+      <h1 className="text">{renderWeather.main?.temp.toFixed(1)} ℃</h1>
       <h4 className="text">
-        {currentWeather.weather && currentWeather.weather[0].description}
+        {renderWeather.weather && renderWeather.weather[0].description}
       </h4>
     </div>
   );

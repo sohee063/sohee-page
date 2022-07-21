@@ -25,8 +25,6 @@ function getSelectedCityWeather(city) {
 }
 
 function getCurrentCityWeather(lat, lon) {
-  console.log("액션", lat, lon);
-
   return async (dispatch) => {
     try {
       dispatch({ type: "GET_WEATHER_REQUEST" });
@@ -34,7 +32,6 @@ function getCurrentCityWeather(lat, lon) {
         `/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
       );
       let currentCity = await currentCityApi;
-      console.log("current", currentCity);
       dispatch({
         type: "GET_CURRENT_CITY",
         payload: {
