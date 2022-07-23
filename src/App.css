@@ -120,7 +120,6 @@ body {
 @media screen and (max-width: 768px) {
   .hometitle {
     font-size: 10rem;
-
     transition: 500ms;
   }
 }
@@ -185,7 +184,6 @@ body {
   color: #000;
   cursor: pointer;
   font-weight: bold;
-  /* padding: 5px 5px; */
   text-align: center;
   transition: 200ms;
   width: 50px;
