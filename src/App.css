@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
 .abouttitle {
   color: white;
@@ -6,18 +6,19 @@
 
 html {
   width: 100%;
-  height: 100%;
+  /* height: 100%; */
   padding: 10px;
-  font-family: "Raleway", sans-serif;
   background-color: #fcf8f3;
 }
 
 body {
-  background: url("https://t1.daumcdn.net/cfile/tistory/2269703D55ADE90707")
-    center center/cover;
+  /* background: url("https://t1.daumcdn.net/cfile/tistory/2269703D55ADE90707")
+    center center/cover; */
+  /* background-color: #907fa4; */
+  background-color: #f0ebe3;
   border-radius: 20px;
   width: 100%;
-  height: 100%;
+  /* height: 100vh; */
 }
 
 #root {
@@ -26,7 +27,7 @@ body {
 
 .app {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   padding: 30px;
   position: relative;
   display: flex;
@@ -37,26 +38,11 @@ body {
 .apploading {
   background-color: #a8a4ce;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 20px;
-}
-
-.navigation {
-  position: absolute;
-  bottom: 20px;
-  display: flex;
-  justify-content: center;
-}
-.nav-box {
-  width: 250px;
-  height: 50px;
-  background-color: rgba(77, 74, 74, 0.5);
-  border-radius: 10px;
-  box-shadow: rgba(17, 17, 26, 0.1) 0px 8px 24px,
-    rgba(17, 17, 26, 0.1) 0px 16px 56px, rgba(17, 17, 26, 0.1) 0px 24px 80px;
 }
 
 .nav {
@@ -75,7 +61,7 @@ body {
 }
 
 .nav-item:hover {
-  color: plum;
+  color: #2c3639;
 }
 
 .hometitle {
@@ -210,7 +196,8 @@ body {
 }
 
 .main {
-  background-color: #e8a0bf;
+  margin-top: 100px;
+  background-color: #dcd7c9;
   background-repeat: no-repeat;
   width: 500px;
   height: 600px;

@@ -1,14 +1,23 @@
 import React from "react";
-import { Container } from "react-bootstrap";
+import Notice from "../component/Notice";
+import styled from "styled-components";
 
 const About = () => {
+  const AboutBox = styled.div`
+    transition: 500ms;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+  `;
+  const AboutTittle = styled.div`
+    font-size: 50px;
+    margin: 30px;
+  `;
   return (
-    <Container>
-      <h3 className="abouttitle">
-        안녕하세요. 김소희 입니다. 하드웨어 개발자로 일했으며 현재는 프론트엔드
-        개발자를 꿈꾸고 있습니다.
-      </h3>
-    </Container>
+    <AboutBox>
+      <AboutTittle>안녕하세요. 김소희 입니다 👧🏻</AboutTittle>
+      <Notice />
+    </AboutBox>
   );
 };
 

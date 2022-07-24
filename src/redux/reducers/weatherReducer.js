@@ -25,6 +25,7 @@ function weatherReducer(state = initialState, action) {
         currentOrSelect: false,
         setRenderCity: payload.currentCity,
       };
+
     case "GET_WEATHER_REQUEST":
       return { ...state, loading: true };
     case "GET_WEATHER_FAIL":

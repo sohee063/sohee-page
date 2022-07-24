@@ -40,6 +40,7 @@ const Weather = () => {
           <div className="loading">
             <DotLoader color="#ffff" loading={loading} size={100} />
           </div>
+          <WeatherButton cities={cities} />
         </div>
       </Container>
     );
