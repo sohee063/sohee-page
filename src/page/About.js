@@ -8,6 +8,7 @@ const About = () => {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
+    align-items: center;
   `;
   const AboutTittle = styled.div`
     font-size: 50px;

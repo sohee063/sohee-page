@@ -100,7 +100,7 @@ const MsgClick = styled.div`
     width: 100%;
     margin-bottom: 20px;
     display: flex;
-    justify-content: center;
+    justify-content: cen;
 
     > span,
     button {
