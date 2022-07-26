@@ -15,7 +15,9 @@ const Work = () => {
       {isSelect ? (
         <div onClick={onClick}>날씨 앱</div>
       ) : (
-        <img onClick={onClick} src={weatherimg} />
+        <>
+          <img onClick={onClick} src={weatherimg} />
+        </>
       )}
     </WeatherPage>
   );
@@ -39,7 +41,7 @@ const WeatherPage = styled.div`
     box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
   }
   > img:hover {
-    transform: scale(1.03);
+    transform: scale(1.01);
     transition: 500ms;
   }
 `;

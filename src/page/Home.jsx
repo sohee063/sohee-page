@@ -1,9 +1,8 @@
 import * as S from "./styled";
 import { useScrollY } from "../redux/Scroll";
 import { useNavigate } from "react-router-dom";
-import { useLocation } from "react-router-dom";
 import HomeTyping from "../component/HomeTyping";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -16,14 +15,16 @@ const Home = () => {
   }, [scroll]);
 
   return (
-    <S.HomeContainer>
-      <S.HomeTitle>
-        <HomeTyping />
-      </S.HomeTitle>
-      <S.HomeSubTitle>
-        <div>Frontend</div>
-      </S.HomeSubTitle>
-    </S.HomeContainer>
+    <>
+      <S.HomeContainer>
+        <S.HomeTitle>
+          <HomeTyping />
+        </S.HomeTitle>
+        <S.HomeSubTitle>
+          <div>Frontend</div>
+        </S.HomeSubTitle>
+      </S.HomeContainer>
+    </>
   );
 };
 
