@@ -2,7 +2,7 @@ import styled, { keyframes } from "styled-components";
 
 export const HomeContainer = styled.div`
   display: flex;
-  height: 100%;
+  height: 100vh;
   flex-direction: column;
   justify-content: center;
 `;

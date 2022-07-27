@@ -1,16 +1,16 @@
 import { useState, useEffect } from "react";
 
 export function useScrollY() {
-  const [scrollY, setScrollY] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   const listener = () => {
-    setScrollY(true);
+    setScrollY(window.pageYOffset);
   };
 
   useEffect(() => {
-    window.addEventListener("mousewheel", listener);
+    window.addEventListener("scroll", listener);
     return () => {
-      window.removeEventListener("mousewheel", listener);
+      window.removeEventListener("scroll", listener);
     };
   });
 

@@ -44,7 +44,7 @@ const HomeBox = styled.div`
 const Star = styled.img`
   position: absolute;
   top: 57%;
-  left: 90%;
+  right: 30%;
   width: 100px;
   animation: ${turning} 3s 0s infinite linear normal;
   animation-timing-function: ease-out;

@@ -32,24 +32,20 @@ const HomeCard = () => {
 const slide = keyframes`
 
 0%{
-    color:#377D71;
-    background-color: #f0ebe3;
-    bottom: -40px;
+  transform: translate(0,0px);
 }
-10%{
-    color:#377D71;
-    background-color: #f0ebe3;
 
-
+50%{
+  transform: translate(0,10px)
 }
+
 100%{
-  display: block;
-  color: #f0ebe3;
-  background-color:#4c3575;
+  transform: translate(0,0);
 }
 `;
 
 const CardBox = styled.div`
+  margin-top: 5rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -57,18 +53,15 @@ const CardBox = styled.div`
   text-align: center;
   background-color: #4c3575;
   color: #f0ebe3;
-  position: absolute;
-  bottom: -30px;
-  width: 100%;
-  height: 250px;
-  padding-bottom: 50px;
+  width: 23rem;
+  height: 8rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-  animation: ${slide} 500ms 0s 1 linear normal;
+  animation: ${slide} 2s 0s infinite linear normal;
   animation-timing-function: ease-out;
 
   > div {
-    font-size: 40px;
+    font-size: 1.8rem;
   }
   > div:first-child {
     color: #e7f6f2;
