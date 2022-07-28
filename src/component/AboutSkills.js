@@ -5,12 +5,12 @@ import css from "../img/css.png";
 import javascript from "../img/javascript.png";
 import react from "../img/react.png";
 import redux from "../img/redux.png";
-import { Row, Badge } from "react-bootstrap";
+import { Row, Badge, Col } from "react-bootstrap";
 
 const AboutSkills = ({ here }) => {
   return (
     <SkillsBox here={here}>
-      <Row>
+      <Row lg={12}>
         <div>Skills</div>
         <div>
           <div>
@@ -57,7 +57,7 @@ const AboutSkills = ({ here }) => {
           </div>
         </div>
       </Row>
-      <Row>
+      <Row lg={12}>
         <div>Career</div>
         <span>
           <span>
@@ -76,7 +76,8 @@ const AboutSkills = ({ here }) => {
 };
 
 const SkillsBox = styled.div`
-  /* background-color: #132743; */
+  padding: 0;
+  width: 100vw;
   display: flex;
   height: 100vh;
   flex-direction: column;
@@ -98,14 +99,27 @@ const SkillsBox = styled.div`
       background-color: rgba(255, 255, 255, 0, 1);
     }
   }
-  animation: ${(props) => (props.here ? "0.6s ease-in-out loadEffect2" : "")};
-  background-color: ${(props) => (props.here ? "#132743" : "#374045")};
+  animation: ${(props) => {
+    if (props.here >= 400 && props.here <= 2000) {
+      return "0.6s ease-in-out loadEffect2";
+    } else if (props.here > 2000) {
+      return "0.6s ease-in-out loadEffect3";
+    }
+  }};
+  background-color: ${(props) => {
+    if (props.here >= 400 && props.here <= 2000) {
+      return "#374045";
+    } else if (props.here > 2000) {
+      return "#132743";
+    }
+  }};
 
   > div {
     font-size: 4rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     color: #ffe5b4;
     margin: 2rem;
   }

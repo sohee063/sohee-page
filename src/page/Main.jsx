@@ -9,20 +9,26 @@ import styled from "styled-components";
 const Main = () => {
   const navigate = useNavigate();
   let scroll = useScrollY();
-  const [here, setHere] = useState(false);
+  const [here, setHere] = useState(0);
 
   useEffect(() => {
     console.log(scroll);
     console.log(here);
-    if (scroll >= 400 && scroll <= 1400) {
-      setHere(true);
-    } else if (scroll < 400) {
-      setHere(false);
-    } else if (scroll > 800 && scroll < 1500) {
-      setHere(false);
-    } else if (scroll >= 1500) {
-      setHere(true);
-    }
+    // if (scroll >= 400 && scroll <= 1400) {
+    //   setHere(true);
+    // } else if (scroll < 400) {
+    //   setHere(false);
+    // } else if (scroll > 800 && scroll < 1500) {
+    //   setHere(false);
+    // } else if (scroll >= 1500) {
+    //   setHere(true);
+    // }
+    // if (here) {
+    //   setHere(true);
+    // } else {
+    //   setHere(false);
+    // }
+    setHere(scroll);
   }, [scroll]);
 
   return (

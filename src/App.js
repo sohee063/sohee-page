@@ -48,6 +48,7 @@ const Navbar = styled.div`
   justify-content: center;
   position: sticky;
   top: 1rem;
+  z-index: 1;
 `;
 
 export default App;

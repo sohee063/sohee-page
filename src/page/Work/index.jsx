@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import weatherimg from "../../img/weather-app.png";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 const Work = () => {
   const [isSelect, setIsSelect] = useState(false);
@@ -12,59 +12,21 @@ const Work = () => {
     setIsSelect(!isSelect);
   };
   return (
-    <Container>
-      <WeatherPage>
-        {isSelect ? (
-          <div onClick={onClick}>날씨 앱</div>
-        ) : (
-          <>
-            <img onClick={onClick} src={weatherimg} />
-          </>
-        )}
-      </WeatherPage>
-      <WeatherPage>
-        {isSelect ? (
-          <div onClick={onClick}>날씨 앱</div>
-        ) : (
-          <>
-            <img onClick={onClick} src={weatherimg} />
-          </>
-        )}
-      </WeatherPage>
-      <WeatherPage>
-        {isSelect ? (
-          <div onClick={onClick}>날씨 앱</div>
-        ) : (
-          <>
-            <img onClick={onClick} src={weatherimg} />
-          </>
-        )}
-      </WeatherPage>
-      <WeatherPage>
-        {isSelect ? (
-          <div onClick={onClick}>날씨 앱</div>
-        ) : (
-          <>
-            <img onClick={onClick} src={weatherimg} />
-          </>
-        )}
-      </WeatherPage>
-      <WeatherPage>
-        {isSelect ? (
-          <div onClick={onClick}>날씨 앱</div>
-        ) : (
-          <>
-            <img onClick={onClick} src={weatherimg} />
-          </>
-        )}
-      </WeatherPage>
-    </Container>
+    <WeatherPage>
+      {isSelect ? (
+        <div onClick={onClick}>날씨 앱</div>
+      ) : (
+        <img onClick={onClick} src={weatherimg} />
+      )}
+    </WeatherPage>
   );
 };
 
 const WeatherPage = styled.div`
   transition: 500ms;
   margin-top: 100px;
+  padding: 2rem;
+
   > div {
     color: white;
     width: 500px;

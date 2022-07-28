@@ -6,9 +6,9 @@ import {
   faEnvelope,
   faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
-const HomeCard = () => {
+const HomeCard = ({ here }) => {
   return (
-    <CardBox>
+    <CardBox here={here}>
       <div>Contact</div>
       <div>
         <a href="https://github.com/sohee063" target="_blank" rel="noreferrer">
@@ -45,19 +45,32 @@ const slide = keyframes`
 `;
 
 const CardBox = styled.div`
-  margin-top: 5rem;
-  display: none;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
+  padding: 1.5rem;
   text-align: center;
+  margin-top: 5rem;
+  width: 21rem;
   background-color: #1e212d;
   color: #f0ebe3;
-  width: 23rem;
-  height: 8rem;
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  @keyframes loadEffect1 {
+    0% {
+      transform: translateX(30px);
+      display: none;
+    }
+    50% {
+      transform: translateX(-60px);
+      display: none;
+    }
+    100% {
+      transform: translateX(0px);
+      display: block;
+    }
+  }
+  animation: ${(props) =>
+    props.here >= 400 && props.here <= 2200 ? "2s 1 ease-in loadEffect1" : ""};
+  /* display: ${(props) =>
+    props.here >= 400 && props.here <= 2200 ? "block" : "none"}; */
   animation: ${slide} 2s 0s infinite linear normal;
   animation-timing-function: ease-out;
 
@@ -68,8 +81,7 @@ const CardBox = styled.div`
     color: #e7f6f2;
   }
   > div:nth-child(2) {
-    display: flex;
-    align-items: center;
+    margin-top: 1rem;
     > a {
       color: #f7eddb;
     }
