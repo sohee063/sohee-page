@@ -1,14 +1,15 @@
 import * as S from "./styled";
-import { useScrollY } from "../redux/Scroll";
+import { useScrollY } from "../Scroll";
 import { useNavigate } from "react-router-dom";
 import HomeTyping from "../component/HomeTyping";
 import React, { useEffect, useState } from "react";
 import { Container, Row } from "react-bootstrap";
+import styled from "styled-components";
 
-const Home = () => {
+const Home = ({ here }) => {
   return (
-    <S.HomeContainer>
-      <S.HomeTitle>
+    <S.HomeContainer here={here}>
+      <S.HomeTitle here={here}>
         <HomeTyping />
       </S.HomeTitle>
       <S.HomeSubTitle>

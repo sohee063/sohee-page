@@ -7,9 +7,9 @@ import react from "../img/react.png";
 import redux from "../img/redux.png";
 import { Row, Badge } from "react-bootstrap";
 
-const AboutSkills = () => {
+const AboutSkills = ({ here }) => {
   return (
-    <SkillsBox>
+    <SkillsBox here={here}>
       <Row>
         <div>Skills</div>
         <div>
@@ -47,13 +47,11 @@ const AboutSkills = () => {
           </div>
 
           <div>
-            <div>웹표준을 지키려 노력합니다.</div>
             <div>styled-component를 활용할 수 있습니다.</div>
             <div>keyframe으로 애니메이션 기법을 사용한 경험이 있습니다.</div>
             <div>
               Redux, Redux thunk 상태관리 라이브러리 사용 경험이 있습니다.
             </div>
-            <div>ES6 문법에 익숙합니다.</div>
             <div>storybook 작성, 배포 경험이 있습니다.</div>
             <div>figma를 활용하여 레이아웃을 구성할 수 있습니다.</div>
           </div>
@@ -78,12 +76,30 @@ const AboutSkills = () => {
 };
 
 const SkillsBox = styled.div`
-  background-color: #132743;
+  /* background-color: #132743; */
   display: flex;
   height: 100vh;
   flex-direction: column;
   justify-content: center;
   white-space: pre-wrap;
+
+  @keyframes loadEffect2 {
+    0% {
+      background-color: rgba(255, 255, 255, 0, 0.1);
+    }
+    20% {
+      /* opacity: 0.2; */
+      background-color: rgba(255, 255, 255, 0, 0.2);
+    }
+    50% {
+      background-color: rgba(255, 255, 255, 0, 0.5);
+    }
+    100% {
+      background-color: rgba(255, 255, 255, 0, 1);
+    }
+  }
+  animation: ${(props) => (props.here ? "0.6s ease-in-out loadEffect2" : "")};
+  background-color: ${(props) => (props.here ? "#132743" : "#374045")};
 
   > div {
     font-size: 4rem;

@@ -46,12 +46,13 @@ const slide = keyframes`
 
 const CardBox = styled.div`
   margin-top: 5rem;
+  display: none;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   text-align: center;
-  background-color: #4c3575;
+  background-color: #1e212d;
   color: #f0ebe3;
   width: 23rem;
   height: 8rem;
@@ -73,7 +74,8 @@ const CardBox = styled.div`
       color: #f7eddb;
     }
     > a:hover {
-      color: #1b2430;
+      transform: scale(1.1);
+      transition: 500ms;
     }
     > :nth-child(1) {
       margin-right: 100px;

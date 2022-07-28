@@ -6,7 +6,6 @@ import { Pagination } from "react-bootstrap";
 
 const Massages = ({ setId }) => {
   const { noticeMsg } = useSelector((state) => state.notice);
-  console.log("노티스", noticeMsg.length);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(5);
   const [currentPage, setCurrentPage] = useState(1);
