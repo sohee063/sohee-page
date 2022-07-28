@@ -1,11 +1,6 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
-import html from "../img/html.png";
-import css from "../img/css.png";
-import javascript from "../img/javascript.png";
-import react from "../img/react.png";
-import redux from "../img/redux.png";
-import { Row, Badge, Col } from "react-bootstrap";
+import { Row, Badge } from "react-bootstrap";
 
 const AboutSkills = ({ here }) => {
   return (
@@ -67,7 +62,7 @@ const AboutSkills = ({ here }) => {
             <br /> : 회로설계(FPGA, MICOM, Image sensor) 및 디버깅, EMC 인증
             <br />
             <br />
-            3. 코드스테이츠...
+            3. 코드스테이츠 부트캠프...
           </span>
         </span>
       </Row>
@@ -76,20 +71,16 @@ const AboutSkills = ({ here }) => {
 };
 
 const SkillsBox = styled.div`
-  padding: 0;
-  width: 100vw;
   display: flex;
-  height: 100vh;
+  padding: 0;
   flex-direction: column;
-  justify-content: center;
-  white-space: pre-wrap;
+  margin-top: 30rem;
 
   @keyframes loadEffect2 {
     0% {
       background-color: rgba(255, 255, 255, 0, 0.1);
     }
     20% {
-      /* opacity: 0.2; */
       background-color: rgba(255, 255, 255, 0, 0.2);
     }
     50% {
@@ -100,28 +91,24 @@ const SkillsBox = styled.div`
     }
   }
   animation: ${(props) => {
-    if (props.here >= 400 && props.here <= 2000) {
+    if (props.here >= 400 && props.here <= 1800) {
       return "0.6s ease-in-out loadEffect2";
-    } else if (props.here > 2000) {
-      return "0.6s ease-in-out loadEffect3";
     }
   }};
   background-color: ${(props) => {
-    if (props.here >= 400 && props.here <= 2000) {
+    if (props.here >= 400 && props.here <= 1800) {
       return "#374045";
-    } else if (props.here > 2000) {
+    } else if (props.here > 1800) {
       return "#132743";
     }
   }};
 
   > div {
     font-size: 4rem;
-    display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #ffe5b4;
-    margin: 2rem;
+    padding: 2rem;
   }
   > div:nth-child(1) {
     > div:nth-child(2) {

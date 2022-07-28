@@ -1,7 +1,5 @@
-import React, { useEffect } from "react";
-import Weather from "./Weather";
+import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import weatherimg from "../../img/weather-app.png";
 import { Container, Row, Col } from "react-bootstrap";
@@ -12,13 +10,19 @@ const Work = () => {
     setIsSelect(!isSelect);
   };
   return (
-    <WeatherPage>
-      {isSelect ? (
-        <div onClick={onClick}>날씨 앱</div>
-      ) : (
-        <img onClick={onClick} src={weatherimg} />
-      )}
-    </WeatherPage>
+    <Container>
+      <WeatherPage>
+        <Row>
+          <Col>
+            {isSelect ? (
+              <div onClick={onClick}>날씨 앱</div>
+            ) : (
+              <img onClick={onClick} src={weatherimg} />
+            )}
+          </Col>
+        </Row>
+      </WeatherPage>
+    </Container>
   );
 };
 
@@ -26,6 +30,7 @@ const WeatherPage = styled.div`
   transition: 500ms;
   margin-top: 100px;
   padding: 2rem;
+  height: 100vh;
 
   > div {
     color: white;

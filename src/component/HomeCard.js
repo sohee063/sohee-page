@@ -68,9 +68,8 @@ const CardBox = styled.div`
     }
   }
   animation: ${(props) =>
-    props.here >= 400 && props.here <= 2200 ? "2s 1 ease-in loadEffect1" : ""};
-  /* display: ${(props) =>
-    props.here >= 400 && props.here <= 2200 ? "block" : "none"}; */
+    props.here >= 25 && props.here <= 52 ? "2s 1 ease-in loadEffect1" : ""};
+  display: ${(props) => (props.here >= 25 ? "block" : "none")};
   animation: ${slide} 2s 0s infinite linear normal;
   animation-timing-function: ease-out;
 

@@ -6,11 +6,17 @@ const GlobalStyle = createGlobalStyle`
     
     
   }
-
+  
   body {
     font-family: "Helvetica", "Arial", sans-serif;
     line-height: 1.5;
-  }
+    scrollbar-width: none;
+    overflow-y: scroll;
+
+ }
+ body ::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera*/
+}
 
 
 `;

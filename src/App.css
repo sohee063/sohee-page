@@ -1,5 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap");
 
+::-webkit-scrollbar {
+  display: none;
+  overflow-y: scroll;
+}
+/* div {
+  overflow: scroll;
+  -ms-overflow-style: none;
+} */
+
 .app {
   font-family: "Gowun Dodum", sans-serif;
   transition: 500ms;
@@ -12,121 +21,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-/* 날씨 앱..*/
-
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap");
-
-.body {
-  background-color: #fcc5c0;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.btn {
-  background-color: #fff000;
-  border-radius: 12px;
-  color: #000;
-  cursor: pointer;
-  font-weight: bold;
-  text-align: center;
-  transition: 200ms;
-  width: 50px;
-  height: 50px;
-  box-sizing: border-box;
-  border: 0;
-  font-size: 16px;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.btn:not(:disabled):hover,
-.btn:not(:disabled):focus {
-  outline: 0;
-  background: #f4e603;
-  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.2), 0 3px 8px 0 rgba(0, 0, 0, 0.15);
-}
-
-.btn:disabled {
-  filter: saturate(0.2) opacity(0.5);
-  -webkit-filter: saturate(0.2) opacity(0.5);
-  cursor: not-allowed;
-}
-
-.main {
-  background-color: #dcd7c9;
-  background-repeat: no-repeat;
-  width: 500px;
-  height: 600px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50px;
-  padding: 20px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
-}
-.title {
-  color: rgb(4, 75, 84);
-}
-
-.text {
-  text-shadow: rgba(255, 255, 255, 0.3) 0px 5px 38px,
-    rgba(0, 0, 0, 0.22) 0px 5px 12px;
-}
-
-.loading {
-  height: 470px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.weather-box {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 450px;
-}
-
-.weather-btn {
-  display: flex;
-  margin-bottom: 20px;
-}
-
-.weather-btn > button {
-  margin: 5px;
-  padding: 7px 12px;
-  text-align: center;
-  text-transform: uppercase;
-  transition: 0.5s;
-  background-size: 200% auto;
-  color: white;
-  border-radius: 10px;
-  display: block;
-  border: 0px;
-  font-weight: 500;
-  box-shadow: 0px 0px 14px -7px #170e02;
-  background-color: #454545;
-  cursor: pointer;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-}
-
-.weather-btn > button:hover {
-  background-position: right center;
-  transform: scale(1.1);
-  color: #fff;
-  text-decoration: none;
-}
-
-.weather-btn > button:active {
-  transform: scale(0.8);
 }
