@@ -4,7 +4,7 @@ import styled from "styled-components";
 import weatherimg from "../../img/weather-app.png";
 import { Container, Row, Col } from "react-bootstrap";
 
-const Work = () => {
+const Weather = () => {
   const [isSelect, setIsSelect] = useState(false);
   const onClick = () => {
     setIsSelect(!isSelect);
@@ -52,4 +52,4 @@ const WeatherPage = styled.div`
   }
 `;
 
-export default Work;
+export default Weather;

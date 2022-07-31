@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Work from "./page/Work";
+import Portfolio from "./page/Portfolio/Portfolio";
 import About from "./page/About";
 import Main from "./page/Main";
 import Navigation from "./component/Navigation";
@@ -31,11 +31,12 @@ function App() {
             <Navbar>
               <Navigation />
             </Navbar>
-            <Routes>
+            <Main />
+            {/* <Routes>
               <Route path="/" element={<Main />} />
-              <Route path="/work" element={<Work />} />
               <Route path="/about" element={<About />} />
-            </Routes>
+              <Route path="/portfolio" element={<Portfolio />} />
+            </Routes> */}
           </>
         )}
       </div>

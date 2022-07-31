@@ -7,7 +7,7 @@ import dumbo from "../img/dumbo.JPG";
 
 const About = ({ here }) => {
   return (
-    <>
+    <div>
       <Box here={here}>
         <AboutBox>
           <Container>
@@ -18,9 +18,9 @@ const About = ({ here }) => {
               <Col lg={6}>
                 <AboutTitle here={here}>Sohee Kim</AboutTitle>
                 <SubTitle here={here}>
-                  하드웨어 개발자에서 프론트엔드 개발자로 전향하기 위해 열심히
-                  달려가는 중입니다. 👶🏻 <br /> "언제나 새로운 것을 받아들일 줄
-                  아는 사람"이 되고 싶습니다. <br />
+                  하드웨어 개발자에서 프론트엔드 개발자로 전향하기 위해
+                  <br /> 열심히 달려가는 중입니다. <br /> "언제나 새로운 것을
+                  받아들일 줄 아는 사람"이 되고 싶습니다. <br />
                   매번 변화하는 기술에 뒤처지지 않는 개발자가 되고자 합니다.
                 </SubTitle>
                 <HomeCard here={here} />
@@ -32,7 +32,7 @@ const About = ({ here }) => {
         {/* <Notice /> */}
         {/* <AboutSkills here={here} /> */}
       </Box>
-    </>
+    </div>
   );
 };
 
@@ -57,16 +57,16 @@ const Box = styled.div`
     }
   }
   animation: ${(props) => {
-    if (props.here >= 25 && props.here <= 60) {
+    if (props.here >= 25 && props.here <= 45) {
       return "0.6s ease-in-out  loadEffect2";
-    } else if (props.here > 60) {
+    } else if (props.here > 45) {
       return "0.6s ease-in-out  loadEffect3";
     }
   }};
   background-color: ${(props) => {
-    if (props.here >= 25 && props.here <= 60) {
+    if (props.here >= 25 && props.here <= 45) {
       return "#374045";
-    } else if (props.here > 60) {
+    } else if (props.here > 45) {
       return "#132743";
     }
   }};
@@ -95,7 +95,9 @@ const AboutTitle = styled.div`
   text-align: center;
   color: #fff;
   display: none;
-  font-family: "Secular One", sans-serif;
+  /* font-family: "Secular One", sans-serif; */
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 1000;
   animation: 0.7s ease-in-out loadEffect1;
   text-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
@@ -144,7 +146,7 @@ const SubTitle = styled.div`
 `;
 
 const ProfileImg = styled.img`
-  height: 28rem;
+  width: 60%;
   display: none;
   border-radius: 30px;
   @keyframes loadEffect1 {

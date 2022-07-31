@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from "react";
 import Home from "./Home";
-import Work from "./Work";
 import Skill from "./Skill";
 import About from "./About";
 import { useScrollY } from "../Scroll";
 import { useNavigate } from "react-router-dom";
+import Portfolio from "./Portfolio/Portfolio";
 
 const Main = () => {
   const navigate = useNavigate();
@@ -13,15 +13,23 @@ const Main = () => {
 
   useEffect(() => {
     console.log(scroll);
-    console.log(here);
     setHere(scroll);
   }, [scroll]);
 
   return (
     <>
-      <Home here={here} />
-      <About here={here} />
-      <Skill here={here} />
+      <a name="home">
+        <Home here={here} />
+      </a>
+      <a name="about">
+        <About here={here} />
+      </a>
+      <a name="skill">
+        <Skill here={here} />
+      </a>
+      <a name="portfolio">
+        <Portfolio here={here} />
+      </a>
     </>
   );
 };

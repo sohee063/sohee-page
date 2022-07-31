@@ -5,7 +5,6 @@ export const HomeContainer = styled.div`
   height: 100vh;
   flex-direction: column;
   justify-content: center;
-  background-color: #374045;
   @keyframes loadEffect2 {
     0% {
       background-color: #f0ebe3;
@@ -14,10 +13,12 @@ export const HomeContainer = styled.div`
       background-color: #374045;
     }
   }
-  animation: ${(props) =>
-    props.here >= 25 ? "0.6s ease-in-out loadEffect2" : ""};
-  background-color: ${(props) =>
-    props.here >= 25 && props.here <= 1600 ? "#374045" : "#f0ebe3"};
+  animation: ${(props) => {
+    if (props.here >= 25) {
+      return "0.6s ease-in-out  loadEffect2";
+    }
+  }};
+  background-color: ${(props) => (props.here >= 25 ? "#374045" : "#f0ebe3")};
 `;
 
 export const HomeTitle = styled.div`
@@ -44,6 +45,13 @@ export const HomeTitle = styled.div`
     transition: 500ms;
     padding: 10px;
   }
+  transition: 800ms;
+
+  transform: ${(props) => {
+    if (props.here > 4) {
+      return `translateY(150%)`;
+    }
+  }};
 
   font-family: "DM Serif Display", serif;
   white-space: pre-wrap;
@@ -60,6 +68,12 @@ export const HomeTitle = styled.div`
 `;
 
 export const HomeSubTitle = styled.div`
+  transform: ${(props) => {
+    if (props.here > 4) {
+      return `translateY(150%)`;
+    }
+  }};
+  transition: 800ms;
   font-size: 25px;
   text-align: center;
   color: ${(props) =>

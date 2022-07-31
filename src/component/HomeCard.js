@@ -6,6 +6,7 @@ import {
   faEnvelope,
   faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
+
 const HomeCard = ({ here }) => {
   return (
     <CardBox here={here}>
@@ -47,12 +48,12 @@ const slide = keyframes`
 const CardBox = styled.div`
   padding: 1.5rem;
   text-align: center;
-  margin-top: 5rem;
-  width: 21rem;
-  background-color: #1e212d;
+  width: 30rem;
+  /* background-color: #1e212d;  */
   color: #f0ebe3;
   border-radius: 10px;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  /* box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px,
+    rgba(255, 255, 255, 0.23) 0px 3px 6px; */
   @keyframes loadEffect1 {
     0% {
       transform: translateX(30px);
@@ -87,6 +88,7 @@ const CardBox = styled.div`
     > a:hover {
       transform: scale(1.1);
       transition: 500ms;
+      color: black;
     }
     > :nth-child(1) {
       margin-right: 100px;

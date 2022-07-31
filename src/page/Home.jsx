@@ -9,7 +9,7 @@ const Home = ({ here }) => {
       <S.HomeTitle here={here}>
         <HomeTyping />
       </S.HomeTitle>
-      <S.HomeSubTitle>
+      <S.HomeSubTitle here={here}>
         <div>Frontend</div>
       </S.HomeSubTitle>
     </S.HomeContainer>
