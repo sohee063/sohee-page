@@ -10,9 +10,6 @@ const PortfolioBtn = () => {
           React
         </Badge>
         <Badge pill bg="warning" text="dark">
-          Redux
-        </Badge>
-        <Badge pill bg="warning" text="dark">
           Styled
         </Badge>
       </div>

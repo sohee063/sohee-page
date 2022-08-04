@@ -18,7 +18,6 @@ const Portfolio = ({ here }) => {
 const PortfolioBox = styled.div`
   padding-top: 10rem;
   padding-bottom: 10rem;
-  height: 100vh;
 
   @keyframes loadEffect5 {
     0% {

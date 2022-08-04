@@ -4,10 +4,6 @@
   display: none;
   overflow-y: scroll;
 }
-/* div {
-  overflow: scroll;
-  -ms-overflow-style: none;
-} */
 
 .app {
   font-family: "Gowun Dodum", sans-serif;

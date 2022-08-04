@@ -1,11 +1,11 @@
 import React from "react";
 import styled from "styled-components";
-import MassageInput from "./MassageInput";
+import MessageInput from "./MessageInput";
 
 const Notice = () => {
   return (
     <Board>
-      <MassageInput />
+      <MessageInput />
     </Board>
   );
 };

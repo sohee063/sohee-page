@@ -1,5 +1,4 @@
 import React from "react";
-import Notice from "../component/Notice";
 import styled from "styled-components";
 import HomeCard from "../component/HomeCard";
 import { Container, Col, Row } from "react-bootstrap";
@@ -9,28 +8,34 @@ const About = ({ here }) => {
   return (
     <div>
       <Box here={here}>
-        <AboutBox>
-          <Container>
+        <Container>
+          <AboutBox here={here}>
             <Row lg={12}>
-              <Col lg={6}>
+              <Col lg={6} sm={12}>
                 <ProfileImg here={here} src={dumbo} />
               </Col>
-              <Col lg={6}>
-                <AboutTitle here={here}>Sohee Kim</AboutTitle>
+              <Col lg={6} sm={12}>
+                <AboutTitle here={here}>I'm Learning...!</AboutTitle>
                 <SubTitle here={here}>
-                  하드웨어 개발자에서 프론트엔드 개발자로 전향하기 위해
-                  <br /> 열심히 달려가는 중입니다. <br /> "언제나 새로운 것을
-                  받아들일 줄 아는 사람"이 되고 싶습니다. <br />
+                  하드웨어 개발자에서 프론트엔드 개발자로 전향하기 위해 열심히
+                  달려가는 중입니다. <br />
+                  기본적으로 개발 업무를 좋아하며 문제를 디버깅 및 개선 하는
+                  것을 좋아합니다.
+                  <br />
+                  <br />
+                  <span style={{ "font-weight": "2000", color: "#FFFF8F" }}>
+                    "언제나 새로운 것을 받아들일 줄 아는 사람"
+                  </span>
+                  이 되고 싶습니다.
+                  <br />
                   매번 변화하는 기술에 뒤처지지 않는 개발자가 되고자 합니다.
                 </SubTitle>
                 <HomeCard here={here} />
               </Col>
             </Row>
-          </Container>
-        </AboutBox>
-
-        {/* <Notice /> */}
-        {/* <AboutSkills here={here} /> */}
+          </AboutBox>
+          {/* <Notice /> */}
+        </Container>
       </Box>
     </div>
   );
@@ -38,8 +43,9 @@ const About = ({ here }) => {
 
 const Box = styled.div`
   display: flex;
-  height: 100vh;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   @keyframes loadEffect2 {
     0% {
       background-color: #f0ebe3;
@@ -56,15 +62,16 @@ const Box = styled.div`
       background-color: #132743;
     }
   }
+
   animation: ${(props) => {
-    if (props.here >= 25 && props.here <= 45) {
+    if (props.here >= 15 && props.here <= 45) {
       return "0.6s ease-in-out  loadEffect2";
     } else if (props.here > 45) {
       return "0.6s ease-in-out  loadEffect3";
     }
   }};
   background-color: ${(props) => {
-    if (props.here >= 25 && props.here <= 45) {
+    if (props.here >= 15 && props.here <= 45) {
       return "#374045";
     } else if (props.here > 45) {
       return "#132743";
@@ -74,8 +81,9 @@ const Box = styled.div`
 
 const AboutBox = styled.div`
   white-space: pre-wrap;
-  transition: 500ms;
-  margin-top: 8rem;
+  transition: 700ms;
+  margin-top: 10rem;
+  margin-bottom: 10rem;
   padding: 2rem;
 
   align-items: center;
@@ -88,14 +96,20 @@ const AboutBox = styled.div`
     flex-direction: column;
     align-items: center;
   }
+
+  /* transform: ${(props) => {
+    if (props.here > 42) {
+      return `translateY(60%)`;
+    }
+  }}; */
 `;
 
 const AboutTitle = styled.div`
-  font-size: 6rem;
+  font-size: 4rem;
+  margin-bottom: 1rem;
   text-align: center;
   color: #fff;
   display: none;
-  /* font-family: "Secular One", sans-serif; */
   font-family: "Nanum Myeongjo", serif;
   font-weight: 1000;
   animation: 0.7s ease-in-out loadEffect1;
@@ -113,15 +127,15 @@ const AboutTitle = styled.div`
     }
   }
   animation: ${(props) =>
-    props.here >= 25 && props.here <= 52
+    props.here >= 15 && props.here <= 52
       ? "1.3s 1 ease-in-out loadEffect1"
       : ""};
-  display: ${(props) => (props.here >= 25 ? "block" : "none")};
+  display: ${(props) => (props.here >= 15 ? "block" : "none")};
 `;
 
 const SubTitle = styled.div`
   font-size: 18px;
-  margin-bottom: 1rem;
+  margin-bottom: 5rem;
   text-align: center;
   color: #fdf6ec;
   @keyframes loadEffect1 {
@@ -139,10 +153,10 @@ const SubTitle = styled.div`
   display: none;
   animation: 0.7s ease-in-out loadEffect1;
   animation: ${(props) =>
-    props.here >= 25 && props.here <= 52
+    props.here >= 15 && props.here <= 52
       ? "1.3s 1 ease-in-out loadEffect1"
       : ""};
-  display: ${(props) => (props.here >= 25 ? "block" : "none")};
+  display: ${(props) => (props.here >= 15 ? "block" : "none")};
 `;
 
 const ProfileImg = styled.img`
@@ -164,8 +178,8 @@ const ProfileImg = styled.img`
     }
   }
   animation: ${(props) =>
-    props.here >= 25 && props.here <= 52 ? "2s 1 ease-in loadEffect1" : ""};
-  display: ${(props) => (props.here >= 25 ? "block" : "none")};
+    props.here >= 15 && props.here <= 52 ? "2s 1 ease-in loadEffect1" : ""};
+  display: ${(props) => (props.here >= 15 ? "block" : "none")};
 `;
 
 export default About;

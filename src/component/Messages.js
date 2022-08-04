@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from "react";
-import Massage from "./Massage";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
 import { Pagination } from "react-bootstrap";
 
-const Massages = ({ setId }) => {
+const Messages = ({ setId }) => {
   const { noticeMsg } = useSelector((state) => state.notice);
   const [start, setStart] = useState(0);
   const [end, setEnd] = useState(5);
@@ -44,7 +43,7 @@ const Massages = ({ setId }) => {
           ))}
         </div>
         {noticeMsg.map((item, idx) => (
-          <Massage item={item} key={idx} setId={setId} />
+          <Messages item={item} key={idx} setId={setId} />
         ))}
       </MsgBox>
     </>
@@ -64,4 +63,4 @@ const MsgBox = styled.div`
   }
 `;
 
-export default Massages;
+export default Messages;

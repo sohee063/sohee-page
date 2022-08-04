@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { noticeAction } from "../redux/actions/noticeAction";
 import { useDispatch } from "react-redux";
 import styled from "styled-components";
-import Massages from "./Massages";
+import Messages from "./Messages";
 
-const MassageInput = () => {
+const MessageInput = () => {
   const [id, setId] = useState("2");
   const [name, setName] = useState("");
   const [content, setContent] = useState("");
@@ -55,7 +55,7 @@ const MassageInput = () => {
           </div>
         </InputBox>
       </form>
-      <Massages setId={setId} />
+      <Messages setId={setId} />
     </>
   );
 };
@@ -133,4 +133,4 @@ const Tittle = styled.div`
   text-align: center;
 `;
 
-export default MassageInput;
+export default MessageInput;

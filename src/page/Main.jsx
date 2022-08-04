@@ -3,11 +3,9 @@ import Home from "./Home";
 import Skill from "./Skill";
 import About from "./About";
 import { useScrollY } from "../Scroll";
-import { useNavigate } from "react-router-dom";
 import Portfolio from "./Portfolio/Portfolio";
 
 const Main = () => {
-  const navigate = useNavigate();
   let scroll = useScrollY();
   const [here, setHere] = useState(0);
 
@@ -21,6 +19,7 @@ const Main = () => {
       <a name="home">
         <Home here={here} />
       </a>
+
       <a name="about">
         <About here={here} />
       </a>

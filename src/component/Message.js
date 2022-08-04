@@ -2,13 +2,12 @@ import React, { useState } from "react";
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { noticeAction } from "../redux/actions/noticeAction";
 
-const Massage = ({ item }) => {
+const Message = ({ item }) => {
   const [isClick, setIsclick] = useState(false);
   const dispatch = useDispatch();
-  const { noticeMsg } = useSelector((state) => state.notice);
   const onClick = () => {
     setIsclick(!isClick);
   };
@@ -108,4 +107,4 @@ const MsgClick = styled.div`
     }
   }
 `;
-export default Massage;
+export default Message;

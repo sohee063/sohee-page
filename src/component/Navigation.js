@@ -1,12 +1,7 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
-import Home from "../page/Home";
 
 const Navigation = () => {
-  const scrollTo = (x, y) => {
-    window.scrollTo(x, y);
-  };
   return (
     <Navbar>
       <div>

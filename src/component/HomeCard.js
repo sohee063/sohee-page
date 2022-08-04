@@ -46,14 +46,7 @@ const slide = keyframes`
 `;
 
 const CardBox = styled.div`
-  padding: 1.5rem;
-  text-align: center;
-  width: 30rem;
-  /* background-color: #1e212d;  */
   color: #f0ebe3;
-  border-radius: 10px;
-  /* box-shadow: rgba(255, 255, 255, 0.16) 0px 3px 6px,
-    rgba(255, 255, 255, 0.23) 0px 3px 6px; */
   @keyframes loadEffect1 {
     0% {
       transform: translateX(30px);
@@ -69,18 +62,25 @@ const CardBox = styled.div`
     }
   }
   animation: ${(props) =>
-    props.here >= 25 && props.here <= 52 ? "2s 1 ease-in loadEffect1" : ""};
-  display: ${(props) => (props.here >= 25 ? "block" : "none")};
+    props.here >= 15 && props.here <= 52 ? "2s 1 ease-in loadEffect1" : ""};
+  display: ${(props) => (props.here >= 15 ? "block" : "none")};
   animation: ${slide} 2s 0s infinite linear normal;
   animation-timing-function: ease-out;
 
-  > div {
-    font-size: 1.8rem;
+  > :first-child {
+    background-color: #f7eddb;
+    border-radius: 12px;
+    color: #121212;
+    /* display: inline-flex; */
+    font-family: Inter, sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1;
+    padding: 1rem 1.2rem;
   }
-  > div:first-child {
-    color: #e7f6f2;
-  }
+
   > div:nth-child(2) {
+    font-size: 1.8rem;
     margin-top: 1rem;
     > a {
       color: #f7eddb;

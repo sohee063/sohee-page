@@ -2,7 +2,7 @@ function addNoticeMsg(id, name, title, content) {
   return async (dispatch) => {
     try {
       dispatch({
-        type: "ADD_MASSAGE",
+        type: "ADD_MESSAGE",
         payload: {
           id: id,
           name: name,
@@ -20,7 +20,7 @@ function deleteNoticeMsg(id) {
   return async (dispatch) => {
     try {
       dispatch({
-        type: "DELETE_MASSAGE",
+        type: "DELETE_MESSAGE",
         payload: {
           id: id,
         },

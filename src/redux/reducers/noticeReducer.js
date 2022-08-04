@@ -13,7 +13,7 @@ let initialState = {
 function noticeReducer(state = initialState, action) {
   let { type, payload } = action;
   switch (type) {
-    case "ADD_MASSAGE":
+    case "ADD_MESSAGE":
       return {
         ...state,
         noticeMsg: [
@@ -26,7 +26,7 @@ function noticeReducer(state = initialState, action) {
           },
         ],
       };
-    case "DELETE_MASSAGE":
+    case "DELETE_MESSAGE":
       return {
         ...state,
         noticeMsg: state.noticeMsg.filter((msg) => msg.id !== payload.id),
