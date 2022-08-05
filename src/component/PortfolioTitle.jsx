@@ -1,15 +1,21 @@
 import React from "react";
-import { Badge } from "react-bootstrap";
+import { Badge, Col, Container, Row } from "react-bootstrap";
 import styled from "styled-components";
 
 const PortfolioTitle = () => {
   return (
-    <PortfolioTitleBox>
-      <div>
-        <div>My page</div>
-        <div>2022.07 ~ 2022.08 (1명)</div>
-      </div>
-    </PortfolioTitleBox>
+    <Container>
+      <PortfolioTitleBox>
+        <Row>
+          <Col lg={3} sm={12}>
+            My page
+          </Col>
+          <Col lg={9} sm={12}>
+            2022.07 ~ 2022.08 (1명)
+          </Col>
+        </Row>
+      </PortfolioTitleBox>
+    </Container>
   );
 };
 
@@ -17,7 +23,6 @@ const PortfolioTitleBox = styled.div`
   margin-bottom: 1rem;
   > :first-child {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     > :first-child {
       background-color: #000;
@@ -25,14 +30,14 @@ const PortfolioTitleBox = styled.div`
       border-radius: 4px;
       box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
       color: #fff;
-      display: inline-block;
       font-size: 35px;
-      line-height: 20px;
-      padding: 20px 40px;
+      padding: 0.5rem;
       text-align: center;
+      margin-bottom: 1rem;
     }
     > :nth-child(2) {
       font-size: 1rem;
+      text-align: end;
     }
   }
 

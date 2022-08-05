@@ -97,32 +97,32 @@ const SkillsBox = styled.div`
   padding: 2rem;
   flex-direction: column;
 
-  @keyframes loadEffect4 {
+  @keyframes skill1 {
     0% {
       background-color: #374045;
     }
   }
 
-  @keyframes loadEffect5 {
+  @keyframes skill2 {
     0% {
       background-color: #132743;
     }
   }
 
   animation: ${(props) => {
-    if (props.here > 45 && props.here < 85) {
-      return "0.6s ease-in-out  loadEffect4";
-    } else if (props.here >= 85) {
-      return "0.6s ease-in-out  loadEffect5";
+    if (props.here > 45 && props.here < 82) {
+      return "0.6s ease-in-out  skill1";
+    } else if (props.here >= 82) {
+      return "0.6s ease-in-out  skill2";
     }
   }};
   background-color: ${(props) => {
-    if (props.here > 45 && props.here < 85) {
+    if (props.here > 45 && props.here < 82) {
       return "#132743";
     } else if (props.here <= 45) {
       return "#374045";
-    } else if (props.here >= 85) {
-      return "#970747";
+    } else if (props.here >= 82) {
+      return "#C8C2BC";
     }
   }};
 

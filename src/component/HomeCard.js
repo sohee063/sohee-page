@@ -5,28 +5,56 @@ import {
   faB,
   faEnvelope,
   faCodeBranch,
+  faMobileScreen,
 } from "@fortawesome/free-solid-svg-icons";
+import { Container, Col, Row } from "react-bootstrap";
 
 const HomeCard = ({ here }) => {
   return (
-    <CardBox here={here}>
-      <div>Contact</div>
-      <div>
-        <a href="https://github.com/sohee063" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faCodeBranch} />
-        </a>
-        <a
-          href="https://www.notion.so/147609eb68d94b15967bb7fb07ea538a"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <FontAwesomeIcon icon={faB} />
-        </a>
-        <a href="mailto:soheeweb@gmail.com" target="_blank" rel="noreferrer">
-          <FontAwesomeIcon icon={faEnvelope} />
-        </a>
-      </div>
-    </CardBox>
+    <Container>
+      <CardBox here={here}>
+        <Row>
+          <Col sm={6}>
+            <a
+              href="https://github.com/sohee063"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faCodeBranch} /> <span>Github</span>
+            </a>
+          </Col>
+          <Col sm={6}>
+            <a
+              href="https://www.notion.so/147609eb68d94b15967bb7fb07ea538a"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faB} /> <span>Blog</span>
+            </a>
+          </Col>
+          <Col sm={6}>
+            <a
+              href="mailto:soheeweb@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faEnvelope} />
+              <span>soheeweb@gmail.com</span>
+            </a>
+          </Col>
+          <Col sm={6}>
+            <a
+              href="mailto:soheeweb@gmail.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FontAwesomeIcon icon={faMobileScreen} />
+              <span>010.5022.3946</span>
+            </a>
+          </Col>
+        </Row>
+      </CardBox>
+    </Container>
   );
 };
 
@@ -46,7 +74,7 @@ const slide = keyframes`
 `;
 
 const CardBox = styled.div`
-  color: #f0ebe3;
+  margin-top: 3rem;
   @keyframes loadEffect1 {
     0% {
       transform: translateX(30px);
@@ -63,38 +91,44 @@ const CardBox = styled.div`
   }
   animation: ${(props) =>
     props.here >= 15 && props.here <= 52 ? "2s 1 ease-in loadEffect1" : ""};
-  display: ${(props) => (props.here >= 15 ? "block" : "none")};
   animation: ${slide} 2s 0s infinite linear normal;
   animation-timing-function: ease-out;
+  border-radius: 12px;
+  color: #121212;
+  display: inline-flex;
+  font-family: Inter, sans-serif;
+  font-size: 1.1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
 
-  > :first-child {
-    background-color: #f7eddb;
-    border-radius: 12px;
-    color: #121212;
-    /* display: inline-flex; */
-    font-family: Inter, sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    line-height: 1;
-    padding: 1rem 1.2rem;
-  }
+  > div > div > a {
+    text-decoration: none;
+    color: black;
+    background: rgba(255, 255, 255, 0.5);
+    width: 100%;
+    margin: 1rem;
+    padding: rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 15px 25px,
+      rgba(0, 0, 0, 0.05) 0px 5px 10px;
 
-  > div:nth-child(2) {
-    font-size: 1.8rem;
-    margin-top: 1rem;
-    > a {
-      color: #f7eddb;
-    }
-    > a:hover {
-      transform: scale(1.1);
-      transition: 500ms;
+    > :first-child {
+      font-size: 1.5rem;
       color: black;
     }
-    > :nth-child(1) {
-      margin-right: 100px;
+    > span {
+      margin-top: 0.5rem;
     }
-    > :nth-child(2) {
-      margin-right: 100px;
+
+    :hover {
+      background: rgba(255, 255, 255, 0.8);
+      transition: 500ms;
+      color: black;
     }
   }
 `;

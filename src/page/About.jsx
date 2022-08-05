@@ -10,12 +10,12 @@ const About = ({ here }) => {
       <Box here={here}>
         <Container>
           <AboutBox here={here}>
-            <Row lg={12}>
-              <Col lg={6} sm={12}>
+            <Row>
+              <Col lg={4} sm={6}>
                 <ProfileImg here={here} src={dumbo} />
               </Col>
-              <Col lg={6} sm={12}>
-                <AboutTitle here={here}>I'm Learning...!</AboutTitle>
+              <Col lg={8} sm={12}>
+                <FirstTitle here={here}>I'm Learning...!</FirstTitle>
                 <SubTitle here={here}>
                   하드웨어 개발자에서 프론트엔드 개발자로 전향하기 위해 열심히
                   달려가는 중입니다. <br />
@@ -30,8 +30,10 @@ const About = ({ here }) => {
                   <br />
                   매번 변화하는 기술에 뒤처지지 않는 개발자가 되고자 합니다.
                 </SubTitle>
-                <HomeCard here={here} />
               </Col>
+            </Row>
+            <Row>
+              <HomeCard here={here} />
             </Row>
           </AboutBox>
           {/* <Notice /> */}
@@ -46,7 +48,7 @@ const Box = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  @keyframes loadEffect2 {
+  @keyframes aboutbackground1 {
     0% {
       background-color: #f0ebe3;
     }
@@ -54,7 +56,7 @@ const Box = styled.div`
       background-color: #374045;
     }
   }
-  @keyframes loadEffect3 {
+  @keyframes aboutbackground2 {
     0% {
       background-color: #374045;
     }
@@ -65,9 +67,9 @@ const Box = styled.div`
 
   animation: ${(props) => {
     if (props.here >= 15 && props.here <= 45) {
-      return "0.6s ease-in-out  loadEffect2";
+      return "0.6s ease-in-out  aboutbackground1";
     } else if (props.here > 45) {
-      return "0.6s ease-in-out  loadEffect3";
+      return "0.6s ease-in-out  aboutbackground2";
     }
   }};
   background-color: ${(props) => {
@@ -85,8 +87,12 @@ const AboutBox = styled.div`
   margin-top: 10rem;
   margin-bottom: 10rem;
   padding: 2rem;
-
   align-items: center;
+  > div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
   > div > div > div:first-child {
     display: flex;
     justify-content: center;
@@ -96,41 +102,31 @@ const AboutBox = styled.div`
     flex-direction: column;
     align-items: center;
   }
-
-  /* transform: ${(props) => {
-    if (props.here > 42) {
-      return `translateY(60%)`;
-    }
-  }}; */
 `;
 
-const AboutTitle = styled.div`
+const FirstTitle = styled.div`
   font-size: 4rem;
   margin-bottom: 1rem;
   text-align: center;
   color: #fff;
-  display: none;
   font-family: "Nanum Myeongjo", serif;
   font-weight: 1000;
-  animation: 0.7s ease-in-out loadEffect1;
-  text-shadow: rgba(17, 17, 26, 0.1) 0px 4px 16px,
-    rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
-  @keyframes loadEffect1 {
+  @keyframes about1 {
     0% {
-      transform: translateX(-30px);
+      transform: translateX(0px);
+      display: none;
     }
     50% {
       transform: translateX(30px);
+      display: none;
     }
     100% {
       transform: translateX(0px);
+      display: block;
     }
   }
   animation: ${(props) =>
-    props.here >= 15 && props.here <= 52
-      ? "1.3s 1 ease-in-out loadEffect1"
-      : ""};
-  display: ${(props) => (props.here >= 15 ? "block" : "none")};
+    props.here >= 15 && props.here <= 52 ? "1.3s 1 ease-in-out about1" : ""};
 `;
 
 const SubTitle = styled.div`
@@ -138,34 +134,30 @@ const SubTitle = styled.div`
   margin-bottom: 5rem;
   text-align: center;
   color: #fdf6ec;
-  @keyframes loadEffect1 {
+  @keyframes about1 {
     0% {
-      transform: translateX(-30px);
+      transform: translateX(0px);
+      display: none;
     }
     50% {
       transform: translateX(30px);
+      display: none;
     }
     100% {
       transform: translateX(0px);
+      display: block;
     }
   }
-
-  display: none;
-  animation: 0.7s ease-in-out loadEffect1;
   animation: ${(props) =>
-    props.here >= 15 && props.here <= 52
-      ? "1.3s 1 ease-in-out loadEffect1"
-      : ""};
-  display: ${(props) => (props.here >= 15 ? "block" : "none")};
+    props.here >= 15 && props.here <= 52 ? "1.3s 1 ease-in-out about1" : ""};
 `;
 
 const ProfileImg = styled.img`
-  width: 60%;
-  display: none;
+  width: 100%;
   border-radius: 30px;
-  @keyframes loadEffect1 {
+  @keyframes about2 {
     0% {
-      transform: translateX(30px);
+      transform: translateX(0px);
       display: none;
     }
     50% {
@@ -178,8 +170,8 @@ const ProfileImg = styled.img`
     }
   }
   animation: ${(props) =>
-    props.here >= 15 && props.here <= 52 ? "2s 1 ease-in loadEffect1" : ""};
-  display: ${(props) => (props.here >= 15 ? "block" : "none")};
+    props.here >= 15 && props.here <= 52 ? "2s 1 ease-in about2" : ""};
+  /* display: ${(props) => (props.here >= 15 ? "block" : "none")}; */
 `;
 
 export default About;
