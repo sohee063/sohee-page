@@ -1,35 +1,38 @@
 import React from "react";
+import { Container, Row, Col, Badge } from "react-bootstrap";
+import netflix from "../../img/netflix.png";
 import styled from "styled-components";
-import soheepage from "../../img/soheepage.png";
-import { Col, Container, Row, Badge } from "react-bootstrap";
 
-const Mypage = () => {
+const Netflix = () => {
   return (
     <Container>
-      <SoheePageBox>
+      <NetflixBox>
         <PortfolioTitleBox>
           <Row>
             <Col lg={4} sm={12}>
-              My page
+              Netflix-clone
             </Col>
             <Col lg={8} sm={12}>
-              2022.07 ~ 2022.08 (1명)
+              2022.06 ~ 2022.06 (1명)
             </Col>
           </Row>
         </PortfolioTitleBox>
         <Row>
           <Col lg={6} sm={12}>
-            <Image src={soheepage} />
+            <Image src={netflix} />
           </Col>
           <Col lg={6} sm={12}>
             <Contents>
-              프론트엔드 개발자를 준비하는 과정에서 나만의 page를 통해 저를
-              표현하고 싶었습니다.
+              Redux-thunk 상태 관리 라이브러리를 학습하면서 Netflix 홈페이지를
+              클론 코딩을 해보았습니다.
+              <br />
+              Movie Database API로 sort와 filter, search 기능으로 원하는 영화를
+              찾아볼 수 있게 구현하였습니다.
               <br />
               <br />- React 기반.
-              <br />- Styled-components를 활용.
-              <br />- scroll 위치에 따른 애니메이션 적용.
-              <br />- 미디어쿼리를 이용한 반응형 웹 구현.
+              <br />- Redux-thunk 사용.
+              <br />- 영화 정렬, 검색, 필터 기능 구현.
+              <br />- 반응형 웹 구현.
             </Contents>
           </Col>
         </Row>
@@ -39,7 +42,10 @@ const Mypage = () => {
               React
             </Badge>
             <Badge pill bg="warning" text="dark">
-              Styled
+              Redux
+            </Badge>
+            <Badge pill bg="warning" text="dark">
+              Redux-thunk
             </Badge>
           </div>
           <div>
@@ -47,16 +53,17 @@ const Mypage = () => {
             <Btn>Live</Btn>
           </div>
         </BtnBox>
-      </SoheePageBox>
+      </NetflixBox>
     </Container>
   );
 };
 
-const SoheePageBox = styled.div`
+const NetflixBox = styled.div`
   border-radius: 0.4rem;
   display: flex;
   flex-direction: column;
   background-color: #f1f1f1;
+  /* background: rgba(255, 255, 255, 0.8); */
   padding: 1.1rem;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 25px 50px -12px;
   > :nth-child(2) {
@@ -72,12 +79,6 @@ const Image = styled.img`
   margin-bottom: 1rem;
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-`;
-
-const Contents = styled.div`
-  margin: 1rem;
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 0.9rem;
 `;
 
 const PortfolioTitleBox = styled.div`
@@ -106,9 +107,14 @@ const PortfolioTitleBox = styled.div`
     width: 100%;
     display: flex;
     justify-content: flex-end;
-
     font-size: 1.7rem;
   }
+`;
+
+const Contents = styled.div`
+  margin: 1rem;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 0.9rem;
 `;
 
 const BtnBox = styled.div`
@@ -144,4 +150,4 @@ const Btn = styled.button`
   }
 `;
 
-export default Mypage;
+export default Netflix;

@@ -2,6 +2,8 @@ import React from "react";
 import Mypage from "./Mypage";
 import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
+import Netflix from "./Netflix";
+import Weather from "./Weather";
 
 const Portfolio = ({ here }) => {
   return (
@@ -11,6 +13,16 @@ const Portfolio = ({ here }) => {
         <Row lg={12}>
           <Col lg={9} sm={12}>
             <Mypage />
+          </Col>
+        </Row>
+        <Row lg={12}>
+          <Col lg={9} sm={12}>
+            <Netflix />
+          </Col>
+        </Row>
+        <Row lg={12}>
+          <Col lg={9} sm={12}>
+            <Weather />
           </Col>
         </Row>
       </Container>
@@ -24,6 +36,17 @@ const PortfolioBox = styled.div`
   > div > div:nth-child(2) {
     display: flex;
     justify-content: center;
+    margin: 0.4rem;
+  }
+  > div > div:nth-child(3) {
+    display: flex;
+    justify-content: center;
+    margin: 0.4rem;
+  }
+  > div > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    margin: 0.4rem;
   }
 
   @keyframes loadEffect5 {

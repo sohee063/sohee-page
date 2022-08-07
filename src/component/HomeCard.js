@@ -5,7 +5,7 @@ import {
   faB,
   faEnvelope,
   faCodeBranch,
-  faMobileScreen,
+  faMobileScreen
 } from "@fortawesome/free-solid-svg-icons";
 import { Container, Col, Row } from "react-bootstrap";
 
@@ -43,11 +43,7 @@ const HomeCard = ({ here }) => {
             </a>
           </Col>
           <Col sm={6}>
-            <a
-              href="mailto:soheeweb@gmail.com"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a>
               <FontAwesomeIcon icon={faMobileScreen} />
               <span>010.5022.3946</span>
             </a>

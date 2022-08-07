@@ -27,7 +27,7 @@ const Skill = ({ here }) => {
                 Styled
               </Badge>
               <Badge pill bg="light" text="dark">
-                Styled
+                Axios
               </Badge>
               <div>
                 <span>HTML/CSS</span>
@@ -155,6 +155,7 @@ const SkillsBox = styled.div`
     margin-top: 2rem;
     margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    margin-right: 0.4rem;
   }
 `;
 
