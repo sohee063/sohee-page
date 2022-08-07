@@ -7,10 +7,10 @@ const PortfolioTitle = () => {
     <Container>
       <PortfolioTitleBox>
         <Row>
-          <Col lg={3} sm={12}>
+          <Col lg={4} sm={12}>
             My page
           </Col>
-          <Col lg={9} sm={12}>
+          <Col lg={8} sm={12}>
             2022.07 ~ 2022.08 (1명)
           </Col>
         </Row>
@@ -30,7 +30,7 @@ const PortfolioTitleBox = styled.div`
       border-radius: 4px;
       box-shadow: #fff 4px 4px 0 0, #000 4px 4px 0 1px;
       color: #fff;
-      font-size: 35px;
+      font-size: 2rem;
       padding: 0.5rem;
       text-align: center;
       margin-bottom: 1rem;

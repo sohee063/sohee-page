@@ -1,25 +1,30 @@
 import React from "react";
 import Mypage from "./Mypage";
 import styled from "styled-components";
-import { Container } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 
 const Portfolio = ({ here }) => {
   return (
     <PortfolioBox here={here}>
       <Container>
         <PortfolioTitie>Portfolio</PortfolioTitie>
-        <Mypage />
+        <Row lg={12}>
+          <Col lg={9} sm={12}>
+            <Mypage />
+          </Col>
+        </Row>
       </Container>
     </PortfolioBox>
   );
 };
-const PortfolioTitie = styled.div`
-  font-size: 5rem;
-  margin-bottom: 2rem;
-`;
+
 const PortfolioBox = styled.div`
   padding-top: 10rem;
   padding-bottom: 10rem;
+  > div > div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+  }
 
   @keyframes loadEffect5 {
     0% {
@@ -40,6 +45,10 @@ const PortfolioBox = styled.div`
       return "#C8C2BC";
     }
   }};
+`;
+const PortfolioTitie = styled.div`
+  font-size: 5rem;
+  margin-bottom: 2rem;
 `;
 
 export default Portfolio;
