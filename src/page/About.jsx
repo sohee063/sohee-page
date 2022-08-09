@@ -3,6 +3,7 @@ import styled from "styled-components";
 import HomeCard from "../component/HomeCard";
 import { Container, Col, Row } from "react-bootstrap";
 import dumbo from "../img/dumbo.JPG";
+import Notice from "../component/Notice";
 
 const About = ({ here }) => {
   return (
@@ -45,6 +46,7 @@ const About = ({ here }) => {
 
 const Box = styled.div`
   display: flex;
+  height: max-content;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -66,16 +68,16 @@ const Box = styled.div`
   }
 
   animation: ${(props) => {
-    if (props.here >= 15 && props.here <= 45) {
+    if (props.here >= 15 && props.here <= 40) {
       return "0.6s ease-in-out  aboutbackground1";
-    } else if (props.here > 45) {
+    } else if (props.here > 40) {
       return "0.6s ease-in-out  aboutbackground2";
     }
   }};
   background-color: ${(props) => {
-    if (props.here >= 15 && props.here <= 45) {
+    if (props.here >= 15 && props.here <= 40) {
       return "#374045";
-    } else if (props.here > 45) {
+    } else if (props.here > 40) {
       return "#132743";
     }
   }};

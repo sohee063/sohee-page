@@ -1,51 +1,62 @@
 import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import styled from "styled-components";
+import Message from "./Message";
 import { Pagination } from "react-bootstrap";
 
 const Messages = ({ setId }) => {
   const { noticeMsg } = useSelector((state) => state.notice);
-  const [start, setStart] = useState(0);
-  const [end, setEnd] = useState(5);
-  const [currentPage, setCurrentPage] = useState(1);
-  let active = 1;
-  let items = [];
-  for (let number = 1; number <= 5; number++) {
-    items.push(
-      <Pagination.Item key={number} active={number === active}>
-        {number}
-      </Pagination.Item>
-    );
+  const [comments, setComments] = useState([]);
+  const [page, setPage] = useState(1);
+
+  //pagination
+  let pageBtn = [];
+  let total_page = noticeMsg.length;
+
+  // 총 몇 페이지인지
+  // 현재 어떤 페이지 보고있는지
+  // 페이지 그룹
+  // 마지막 페이지
+  // 첫번째 페이지
+  // 첫번째~마지막까지 페이지 프린트
+  let pageGroup = Math.ceil(page / 5);
+  let last = pageGroup * 5;
+  let first = last - 4;
+
+  const pagination = () => {
+    for (let i = first; i <= last; i++) {
+      // noticeMsg[i];
+      if (!comments) {
+        comments.push(noticeMsg[i]);
+      }
+    }
+  };
+
+  const pageClick = (item) => {
+    // 1. 이동하고 싶은 페이지를 알아야 함
+    // 2. 이동하고 싶은 페이지를 가지고 데이터 가져오기
+    setPage(item);
+    pagination();
+  };
+
+  for (let i = first; i <= last; i++) {
+    pageBtn.push(i);
   }
 
-  const pageNum = [];
-
-  for (let i = 1; i < Math.ceil(noticeMsg.length / 5); i++) {
-    pageNum.push(i);
-    console.log("나야", pageNum);
-  }
-
-  useEffect(() => {
-    setStart((currentPage - 1) * 5);
-    setEnd(currentPage * 5);
-  }, [currentPage]);
-
-  // 페이지네이션
+  console.log("msg", comments, noticeMsg);
 
   return (
     <>
       <MsgBox>
-        <div>
-          {pageNum.map((num) => (
-            <li key={num} onClick={() => setCurrentPage(num)}>
-              <button>{num}</button>
-            </li>
-          ))}
-        </div>
-        {noticeMsg.map((item, idx) => (
-          <Messages item={item} key={idx} setId={setId} />
+        {comments.map((item, idx) => (
+          <Message item={item} key={idx} setId={setId} />
         ))}
       </MsgBox>
+      <div>
+        {pageBtn.map((item) => (
+          <button onClick={() => pageClick(item)}>{item}</button>
+        ))}
+      </div>
     </>
   );
 };

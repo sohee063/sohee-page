@@ -2,7 +2,8 @@ import styled, { keyframes } from "styled-components";
 
 export const HomeContainer = styled.div`
   display: flex;
-  height: 100vh;
+  /* height: 100vh; */
+  height: max-content;
   flex-direction: column;
   justify-content: center;
   @keyframes loadEffect2 {

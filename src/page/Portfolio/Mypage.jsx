@@ -54,6 +54,7 @@ const Mypage = () => {
 
 const SoheePageBox = styled.div`
   border-radius: 0.4rem;
+  height: max-content;
   display: flex;
   flex-direction: column;
   background-color: #f1f1f1;

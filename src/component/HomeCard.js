@@ -32,7 +32,7 @@ const HomeCard = ({ here }) => {
               <FontAwesomeIcon icon={faB} /> <span>Blog</span>
             </a>
           </Col>
-          <Col sm={6}>
+          <Col sm={12}>
             <a
               href="mailto:soheeweb@gmail.com"
               target="_blank"
@@ -42,12 +42,12 @@ const HomeCard = ({ here }) => {
               <span>soheeweb@gmail.com</span>
             </a>
           </Col>
-          <Col sm={6}>
+          {/* <Col sm={6}>
             <a>
               <FontAwesomeIcon icon={faMobileScreen} />
               <span>010.5022.3946</span>
             </a>
-          </Col>
+          </Col> */}
         </Row>
       </CardBox>
     </Container>

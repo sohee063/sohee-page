@@ -31,6 +31,7 @@ const Portfolio = ({ here }) => {
 };
 
 const PortfolioBox = styled.div`
+  height: max-content;
   padding-top: 10rem;
   padding-bottom: 10rem;
   > div > div:nth-child(2) {
@@ -56,14 +57,14 @@ const PortfolioBox = styled.div`
   }
 
   animation: ${(props) => {
-    if (props.here >= 82) {
+    if (props.here >= 72) {
       return "0.6s ease-in-out  loadEffect5";
     }
   }};
   background-color: ${(props) => {
-    if (props.here < 82) {
+    if (props.here < 72) {
       return "#132743";
-    } else if (props.here >= 82) {
+    } else if (props.here >= 72) {
       // return "#970747";
       return "#C8C2BC";
     }

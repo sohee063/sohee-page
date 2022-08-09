@@ -91,6 +91,7 @@ const Skill = ({ here }) => {
 };
 
 const SkillsBox = styled.div`
+  height: max-content;
   padding-top: 10rem;
   padding-bottom: 10rem;
   display: flex;
@@ -110,18 +111,18 @@ const SkillsBox = styled.div`
   }
 
   animation: ${(props) => {
-    if (props.here > 45 && props.here < 82) {
+    if (props.here > 40 && props.here < 72) {
       return "0.6s ease-in-out  skill1";
-    } else if (props.here >= 82) {
+    } else if (props.here >= 72) {
       return "0.6s ease-in-out  skill2";
     }
   }};
   background-color: ${(props) => {
-    if (props.here > 45 && props.here < 82) {
+    if (props.here > 40 && props.here < 72) {
       return "#132743";
-    } else if (props.here <= 45) {
+    } else if (props.here <= 40) {
       return "#374045";
-    } else if (props.here >= 82) {
+    } else if (props.here >= 72) {
       return "#C8C2BC";
     }
   }};
