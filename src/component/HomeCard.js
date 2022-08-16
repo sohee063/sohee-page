@@ -4,8 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faB,
   faEnvelope,
-  faCodeBranch,
-  faMobileScreen
+  faCodeBranch
 } from "@fortawesome/free-solid-svg-icons";
 import { Container, Col, Row } from "react-bootstrap";
 
