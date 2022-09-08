@@ -26,9 +26,7 @@ const Main = () => {
       <a name="skill">
         <Skill here={here} />
       </a>
-      <a name="portfolio">
-        <Portfolio here={here} />
-      </a>
+      <a name="portfolio">{/* <Portfolio here={here} /> */}</a>
     </>
   );
 };
