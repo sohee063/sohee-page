@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { Container, Row, Col } from "react-bootstrap";
 import Netflix from "./Netflix";
 import Weather from "./Weather";
+import Albamung from "./Albamung";
 
 const Portfolio = ({ here }) => {
   return (
@@ -23,6 +24,11 @@ const Portfolio = ({ here }) => {
         <Row lg={12}>
           <Col lg={9} sm={12}>
             <Weather />
+          </Col>
+        </Row>
+        <Row lg={12}>
+          <Col lg={9} sm={12}>
+            <Albamung />
           </Col>
         </Row>
       </Container>
@@ -45,6 +51,12 @@ const PortfolioBox = styled.div`
     margin: 0.4rem;
   }
   > div > div:nth-child(4) {
+    display: flex;
+    justify-content: center;
+    margin: 0.4rem;
+  }
+
+  > div > div:nth-child(5) {
     display: flex;
     justify-content: center;
     margin: 0.4rem;
