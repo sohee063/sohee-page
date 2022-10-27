@@ -21,7 +21,7 @@ const Skill = ({ here }) => {
                 Redux
               </Badge>
               <Badge pill bg="light" text="dark">
-                Recoil
+                Redux-thunk
               </Badge>
               <Badge pill bg="light" text="dark">
                 Styled
@@ -51,7 +51,7 @@ const Skill = ({ here }) => {
                   간편한 React를 주로 사용합니다.
                 </div>
                 <div>
-                  Redux, Redux thunk, Recoil 상태관리 라이브러리 사용 경험이
+                  Redux, Redux thunk, zustand 상태관리 라이브러리 사용 경험이
                   있습니다.
                 </div>
               </div>
