@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faB,
   faEnvelope,
-  faCodeBranch
+  faCodeBranch,
 } from "@fortawesome/free-solid-svg-icons";
 import { Container, Col, Row } from "react-bootstrap";
 
@@ -23,11 +23,7 @@ const HomeCard = ({ here }) => {
             </a>
           </Col>
           <Col sm={6}>
-            <a
-              href="https://www.notion.so/147609eb68d94b15967bb7fb07ea538a"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href="https://velog.io/@sarah_" target="_blank" rel="noreferrer">
               <FontAwesomeIcon icon={faB} /> <span>Blog</span>
             </a>
           </Col>
